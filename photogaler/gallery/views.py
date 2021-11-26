@@ -5,4 +5,10 @@ from django.shortcuts import render
 
 
 def IndexView(request):
-    return HttpResponse ("Hello")
+    title="HomePage"
+
+    context ={
+        "title":title,
+
+    }
+    return render (request,'index.html',context)

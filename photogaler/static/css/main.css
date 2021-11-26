@@ -1,3 +1,7 @@
 body{
     background-color:aliceblue;
 }
+#hero-section{
+    background-image: url("../img/herobg.jpg");
+    
+}
