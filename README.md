@@ -75,3 +75,7 @@ Copyright (c) {2021}
 
 # Website Design :link:
 * see [Website Design](https://www.figma.com/file/FkJ8zy5BR120eW0pkAN3W5/PhotoGaler?node-id=1%3A2) file
+
+
+# Admin Dashboard :link:
+* see [Website Design](https://www.figma.com/file/1PLCxPvvePTHQtPcYm1x2J/PhotoGaleradmin?node-id=1%3A2) file

@@ -9,7 +9,6 @@ from gallery.models import Image
 def IndexView(request):
     title="HomePage"
     images = Image.objects.all()
-
     context ={
         "title":title,
         "images":images
@@ -19,9 +18,7 @@ def IndexView(request):
 def searched_images(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        images = Image.search_photos_by_category(searched)
-        print("This is what it has")
-        print(images)
+        images = Image.search_photos_by_category(searched)       
         context={
             'searched':searched,
             "images":images,
@@ -39,21 +36,21 @@ def searched_images(request):
 
 def fillter_by_location_Nyeri(request):
     images = Image.filter_photo_by_location('Nyeri')
-    print(images)
+    
 
     context={"images":images,}
     return render(request,'fillter_by_location.html',context)
 
 def fillter_by_location_Nairobi(request):
     images = Image.filter_photo_by_location('Nairobi')
-    print(images)
+    
 
     context={"images":images,}
     return render(request,'fillter_by_location.html',context)
 
 def fillter_by_location_Naks(request):
     images = Image.filter_photo_by_location('Naks')
-    print(images)
+    
 
     context={"images":images,}
     return render(request,'fillter_by_location.html',context)
