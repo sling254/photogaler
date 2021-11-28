@@ -36,3 +36,7 @@ class PhotoTestClass(TestCase):
     def test_get_all_image(self):
         images = Image.get_all_Images()
         self.assertTrue(len(images)>0)
+
+    def test_get_image_id(self):
+        images= Image.get_image_id(self.image.id)
+        self.assertTrue(len(images) == 1)
