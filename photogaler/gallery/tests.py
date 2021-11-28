@@ -32,3 +32,7 @@ class PhotoTestClass(TestCase):
         self.image.save_image()
         images  = Image.objects.all()
         self.assertTrue(len(images)>0)
+
+    def test_get_all_image(self):
+        images = Image.get_all_Images()
+        self.assertTrue(len(images)>0)

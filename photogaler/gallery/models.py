@@ -65,7 +65,7 @@ class Image(models.Model):
         return update
 
     @classmethod
-    def get_all_Image(cls):
+    def get_all_Images(cls):
         Image = cls.objects.all()
         return Image
 
