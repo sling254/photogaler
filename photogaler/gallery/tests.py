@@ -72,3 +72,15 @@ class PhotoTestClass(TestCase):
             category = Category.objects.all()
             self.assertTrue(len(category) > 0)
 
+        def test_delete_method(self):
+            self.category.save_category()
+            self.category.delete_category()
+            category = Category.objects.all()
+            self.assertTrue(len(category) == 0)
+
+        def test_update(self):
+            category = Category.get_category_id(self.category.id)
+            category.update_category('coding')
+            category = Category.get_category_id(self.category.id)
+            self.assertTrue(category.title == 'coding')
+
