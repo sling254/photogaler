@@ -1,5 +1,6 @@
 from django.db import models
 import datetime as dt
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -48,7 +49,7 @@ class Category(models.Model):
 class Image(models.Model):    
     name = models.CharField(max_length=20)
     description = models.TextField()
-    image = models.ImageField()
+    image = CloudinaryField('image')
     posted_at = models.DateTimeField(auto_now_add=True)
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
