@@ -51,17 +51,12 @@ class PhotoTestClass(TestCase):
         category = Category.get_category_id(self.category.id)
         self.assertTrue(category.category_name == 'horse riding')
 
-    """ def test_update_image(self):
-        self.image.save_image()
-        image = Image.update_image( self.image.id, 'test update', 'my test',self.loc, self.cat)
-        image_item = image.objects.filter(id = self.image.id)
-        print(image_item)
-        self.assertTrue(image.name == 'test update') """
+   
 
 class CategoryTestClass(TestCase):
 # Set up Method
     def setUp(self):
-        self.category = Category(title="hike")
+        self.category = Category(category_name="hike")
         self.category.save_category()
 
     def test_instance(self):
@@ -82,12 +77,12 @@ class CategoryTestClass(TestCase):
         category = Category.get_category_id(self.category.id)
         category.update_category('coding')
         category = Category.get_category_id(self.category.id)
-        self.assertTrue(category.title == 'coding')
+        self.assertTrue(category.category_name == 'coding')
     
 class LocationTestCLass(TestCase):
     #Set up Method
     def setUp(self):
-        self.location = Location(title="Home")
+        self.location = Location(location_name="Home")
         self.location.save_location()
 
     def test_instance(self):
@@ -108,4 +103,4 @@ class LocationTestCLass(TestCase):
         location = Location.get_location_id(self.location.id)
         location.update_location('Nyeri')
         location = Location.get_location_id(self.location.id)
-        self.assertTrue(location.title == 'Nyeri')
+        self.assertTrue(location.location_name == 'Nyeri')
