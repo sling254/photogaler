@@ -36,3 +36,16 @@ def searched_images(request):
 
     return render(request,'searched_images.html',context)
 
+def fillter_by_location_Nyeri(request):
+    images = Image.filter_photo_by_location('Nyeri')
+    print(images)
+
+    context={"images":images,}
+    return render(request,'fillter_by_location.html',context)
+
+def fillter_by_location_Nairobi(request):
+    images = Image.filter_photo_by_location('Nairobi')
+    print(images)
+
+    context={"images":images,}
+    return render(request,'fillter_by_location.html',context)
