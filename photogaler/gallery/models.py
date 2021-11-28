@@ -56,7 +56,7 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
-    def save_image(self):
+    def delete_image(self):
         self.delete()
 
     @classmethod
