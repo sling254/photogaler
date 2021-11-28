@@ -40,3 +40,7 @@ class PhotoTestClass(TestCase):
     def test_get_image_id(self):
         images= Image.get_image_id(self.image.id)
         self.assertTrue(len(images) == 1)
+
+    def test_search_photos_by_category(self):
+        images = Image.search_photos_by_category('City')
+        self.assertTrue(len(images)>0)
