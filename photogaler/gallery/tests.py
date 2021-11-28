@@ -97,3 +97,15 @@ class LocationTestCLass(TestCase):
         self.location.save_location()
         locations = Location.objects.all()
         self.assertTrue(len(locations) > 0)
+
+    def test_delete_method(self):
+        self.location.save_location()
+        self.location.delete_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) == 0)
+
+    def test_update(self):
+        location = Location.get_location_id(self.location.id)
+        location.update_location('Nyeri')
+        location = Location.get_location_id(self.location.id)
+        self.assertTrue(location.title == 'Nyeri')
