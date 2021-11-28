@@ -49,3 +49,10 @@ def fillter_by_location_Nairobi(request):
 
     context={"images":images,}
     return render(request,'fillter_by_location.html',context)
+
+def fillter_by_location_Naks(request):
+    images = Image.filter_photo_by_location('Naks')
+    print(images)
+
+    context={"images":images,}
+    return render(request,'fillter_by_location.html',context)
