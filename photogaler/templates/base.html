@@ -47,7 +47,7 @@
             </ul>
             <form class="d-flex" action="{% url 'searched_images'%}"method="POST">
               {% csrf_token %}
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="search" placeholder="Search by Category" aria-label="Search" name="searched">
               <button class="btn btn-outline-secondary" type="submit">Search</button>
             </form>
           </div>
