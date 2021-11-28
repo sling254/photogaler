@@ -8,10 +8,11 @@ from gallery.models import Image
 
 def IndexView(request):
     title="HomePage"
+    images = Image.objects.all()
 
     context ={
         "title":title,
-
+        "images":images
     }
     return render (request,'index.html',context)
 
