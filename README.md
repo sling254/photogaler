@@ -8,6 +8,7 @@ This is a digitalized gallery built with Django python framework.
 
 ## Check out the website
 
+https://photogaler.herokuapp.com/
 ## Setup/Installation Requirements
 
 The first thing to do is to clone the repository:
