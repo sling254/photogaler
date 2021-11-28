@@ -35,3 +35,4 @@ def searched_images(request):
 
 
     return render(request,'searched_images.html',context)
+
