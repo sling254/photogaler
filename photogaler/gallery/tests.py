@@ -50,3 +50,25 @@ class PhotoTestClass(TestCase):
         category.update_category('horse riding')
         category = Category.get_category_id(self.category.id)
         self.assertTrue(category.category_name == 'horse riding')
+
+    """ def test_update_image(self):
+        self.image.save_image()
+        image = Image.update_image( self.image.id, 'test update', 'my test',self.loc, self.cat)
+        image_item = image.objects.filter(id = self.image.id)
+        print(image_item)
+        self.assertTrue(image.name == 'test update') """
+
+    class CategoryTestClass(TestCase):
+    # Set up Method
+        def setUp(self):
+            self.category = Category(title="hike")
+            self.category.save_category()
+
+        def test_instance(self):
+            self.assertTrue(isinstance(self.category, Category))
+
+        def test_save_method(self):
+            self.category.save_category()
+            category = Category.objects.all()
+            self.assertTrue(len(category) > 0)
+
