@@ -4,31 +4,59 @@
 <div class="container">
     {% if searched %}
         <h1 class="text-center mt-4">You serached for {{searched}}</h1>
+        <p class="text-center text-primary">Available categories are Hike, Food and City</p>
         
         <div class="row">
-            {% for image in images%}
-            {{image}}
-            <br>
-            {{image.name}}
-            <br>
-            {{image.description}}
-            <br>
-            {{image.posted_at}}
-            <br>
-            {{ image.location}}
-            <br>
-            {{ image.category}}
+          {% for image in images%}
             <div class="col-md-4 ">
-              <a href=""data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <img class="img-fluid" src="{{image.name}}" alt="">
+              <a href=""data-bs-toggle="modal" data-bs-target="#exampleModal{{image.id}}">
+                <img class="img-fluid" src="{{image.image.url}}" alt="">
               </a>
             </div>
-            {% endfor %}
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{image.name}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>{{image.description}}</p>
+                    <div class="row">
+                      <img class="img-fluid" src="{{image.image.url}}" alt="">
+                      
+                    </div>
+                  </div>
+                  <div class="modal-footer"> 
+                    <div class="row">
+                      <h5>Photo URL:</h5>  
+                      <div class="input-group">
+                        <div class="input-group-text"><i class="fa fa-clone" aria-hidden="true"></i></div>
+                        <input type="text" id="imagelink" value="{{image.image.url}}" class="btn btn-outline-primary form-control photoUrl" readonly>
+                      </div>         
+                      <h5>Location: <small>{{image.location}}</small></h5>
+                      <br>
+                      <h5>Category: <small>{{image.category}}</small></h5>
+                      <h6>Posted on: <small>{{image.posted_at}}</small></h6>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- endmodal -->
+          {% endfor %}
         </div>
         
         
     {%else%}
-        Go back and enter a venue
+    <p class="text-center text-danger">ooop !! You did not enter anything in the search box</p>
+        
+    
     {% endif %}
 </div>
 
