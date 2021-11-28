@@ -1,13 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="p-4 p-md-5 mb-4 text-white rounded "id="hero-section">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">“Photography is an austere and blazing poetry of the real.”<br> <span class="mute">– Ansel Adams</span></h1>
-      <p class="lead my-3">I go and get the camera and do it. Photography is a medium in which if you don’t do it then, very often you don’t do it at all, because it doesn’t happen twice.”</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
-    </div>
-</div>
-<br>
 <div class="container mb-3">
       <div class="row">
         {% for image in images%}
@@ -16,10 +8,6 @@
               <img class="img-fluid" src="{{image.image.url}}" alt="">
             </a>
           </div>
-    
-            
-
-            
           <!-- Modal -->
           <div class="modal fade" id="exampleModal{{image.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -35,7 +23,7 @@
                     
                   </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer"> 
                   <div class="row">
                     <h5>Photo URL:</h5>  
                     <div class="input-group">
