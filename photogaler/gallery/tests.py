@@ -44,3 +44,9 @@ class PhotoTestClass(TestCase):
     def test_search_photos_by_category(self):
         images = Image.search_photos_by_category('City')
         self.assertTrue(len(images)>0)
+    
+    def test_update(self):
+        category = Category.get_category_id(self.category.id)
+        category.update_category('horse riding')
+        category = Category.get_category_id(self.category.id)
+        self.assertTrue(category.category_name == 'horse riding')
