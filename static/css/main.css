@@ -1,10 +1,7 @@
 body{
     background-color:aliceblue;
 }
-.navbar-brand{
-    font-size: 3.25rem;
-}
-#hero-section{
+
+#hero-section{    
     background-image: url("../img/herobg.jpg");
-    
 }
